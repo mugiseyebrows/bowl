@@ -52,4 +52,6 @@ colors = [int(c) for c in args.colors]
 
 res = evaluate(colors, take)
 for i,v in enumerate(res):
+    if i == 0:
+        continue
     print("p({}) = {:.6f}".format(i, v))

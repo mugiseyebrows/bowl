@@ -26,4 +26,6 @@ colors = [int(c) for c in args.colors]
 
 res = simulate(colors, take)
 for i,v in enumerate(res):
+    if i == 0:
+        continue
     print("p({}) = {:.3f}".format(i, v))
