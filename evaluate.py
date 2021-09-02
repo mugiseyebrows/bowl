@@ -10,15 +10,15 @@ class Item:
         self.children = []
         self.colors = colors
 
-    def ev(self):
+    def evaluate(self):
         colors = self.colors
         tot = sum(colors)
         self.children = [Item(c / tot, minus_one(colors, i)) for i,c in enumerate(colors)]
 
-    def prob(self, m):
+    def probability(self, m):
         if len(self.children) == 0:
             return self.p
-        return self.p * self.children[m[0]].prob(m[1:])
+        return self.p * self.children[m[0]].probability(m[1:])
 
 def leaf_nodes(tree):
     if len(tree.children) == 0:
@@ -30,13 +30,13 @@ def leaf_nodes(tree):
     
 def evaluate(colors, take):
     tree = Item(1, colors)
-    for i in range(take):
+    for _ in range(take):
         for item in leaf_nodes(tree):
-            item.ev()
+            item.evaluate()
 
-    res = [0 for i in range(len(colors)+1)]
+    res = [0 for _ in range(len(colors)+1)]
     for item in product(range(len(colors)), repeat=take):
-        res[len(set(item))] += tree.prob(item)
+        res[len(set(item))] += tree.probability(item)
     return res
 
 parser = argparse.ArgumentParser()
