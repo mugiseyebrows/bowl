@@ -15,16 +15,12 @@ def simulate(colors, take):
     return res
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-c','--colors', nargs='+')
-parser.add_argument('-t','--take',type=int)
+parser.add_argument('-c','--colors', nargs='+', type=int)
+parser.add_argument('-t','--take', type=int)
 
 args = parser.parse_args()
-#print(args); exit(0)
 
-take = args.take
-colors = [int(c) for c in args.colors]
-
-res = simulate(colors, take)
+res = simulate(args.colors, args.take)
 for i,v in enumerate(res):
     if i == 0:
         continue
