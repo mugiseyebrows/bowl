@@ -21,13 +21,12 @@ class Item:
         return self.p * self.children[m[0]].prob(m[1:])
 
 def leaf_nodes(tree):
-    res = []
     if len(tree.children) == 0:
-        res.append(tree)
+        yield tree
+        return
     for child in tree.children:
         for item in leaf_nodes(child):
-            res.append(item)
-    return res
+            yield item
     
 def evaluate(colors, take):
     tree = Item(1, colors)
