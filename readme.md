@@ -14,16 +14,16 @@ For example we have: 2 red, 3 green, 4 blue, and 7 purple balls, if we pick 5 by
 
 ```bash
 python evaluate.py -c 2 3 4 7 -t 5
-p(1) = 0.004808
-p(2) = 0.184295
-p(3) = 0.580128
-p(4) = 0.230769
+p(1) = 0.004808   0.5%
+p(2) = 0.184295  18.4%
+p(3) = 0.580128  58.0%
+p(4) = 0.230769  23.1%
 
 python simulate.py -c 2 3 4 7 -t 5
-p(1) = 0.005
-p(2) = 0.184
-p(3) = 0.580
-p(4) = 0.231
+p(1) = 0.005   0.5%
+p(2) = 0.184  18.4%
+p(3) = 0.580  58.0%
+p(4) = 0.231  23.1%
 ```
 
 Note: evaluation for `t>10` will probably takes forever and all your memory.

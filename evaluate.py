@@ -50,4 +50,4 @@ res = evaluate(args.colors, args.take)
 for i,v in enumerate(res):
     if i == 0:
         continue
-    print("p({}) = {:.6f}".format(i, v))
+    print("p({}) = {:.6f}  {:4.1f}%".format(i, v, v * 100))

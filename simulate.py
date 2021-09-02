@@ -24,4 +24,4 @@ res = simulate(args.colors, args.take)
 for i,v in enumerate(res):
     if i == 0:
         continue
-    print("p({}) = {:.3f}".format(i, v))
+    print("p({}) = {:.3f}  {:4.1f}%".format(i, v, v * 100))
